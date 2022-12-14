@@ -5,16 +5,22 @@
  *
  * Return: void
  */
+
 void print_alphabet_x10(void)
 {
-	for (int i = 0; i < 10; i++)
+	int round = 0;
+	char letter = 'a';
+
+	while (round < 10)
 	{
-		printf("abcdefghijklmnopqrstuvwxyz\n");
+		letter = 'a';
+		while (letter <= 'z')
+		{
+			_putchar(letter);
+			letter++;
+		}
+		_putchar('\n');
+
+		round++;
 	}
 }
-
-/**
- * main - calls the print_alphabet function
- *
- * Return: 0 on success
- */
