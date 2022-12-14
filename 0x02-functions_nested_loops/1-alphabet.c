@@ -1,22 +1,14 @@
-#include <stdio.h>
-
+#include "main.h"
 /**
- * print_alphabet - prints the alphabet in lowercase
+ * print_alphabet - Prints letters of alphabet in lowercase
  *
- * Return: void
+ * Result: Always void (success)
  */
 void print_alphabet(void)
 {
-	printf("abcdefghijklmnopqrstuvwxyz\n");
-}
+	int i;
 
-/**
- * main - calls the print_alphabet function
- *
- * Return: 0 on success
- */
-int main(void)
-{
-
-	return (0);
+	for (i = 97; i <= 122; i++)
+		_putchar(i);
+	_putchar('\n');
 }
