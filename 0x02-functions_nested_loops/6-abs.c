@@ -5,6 +5,8 @@
  *
  * Return: The absolute value of n
  */
+#include "main.h"
+
 int _abs(int n)
 {
 	if (n < 0)
