@@ -5,17 +5,24 @@
 #define LENGTH 8
 
 /**
- * main - generates random valid passwords
+ * main - program to randomly generate valud passwords
  * Return: 0 (on success).
  *
  */
 
 int main(void)
 {
-  srand(time(NULL));
+	int password, sum;
 
-  for (int i = 0; i < LENGTH; i++)
-    putchar(rand() % (91 - 65) + 65);
+	srand(time(NULL));
+	sum = 0;
+	while (sum <= 2645)
+	{
+		password = (rand() % 128);
+		sum += password;
+		printf("%c", password);
+	}
+	printf("%c", 2772 - sum);
 
-  return 0;
+	return (0);
 }
