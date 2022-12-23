@@ -1,26 +1,22 @@
 #include "main.h"
 
 /**
- * rot13 - Encode a string using rot13
- * @s: The string to encode
+ * rot13 - encode strings using rot13 encoding.
+ * @str: string to be encoded
  *
- * Return: A pointer to the encoded string s
+ * Return: encoded string.
  */
-char *rot13(char *s)
+char *rot13(char *str)
 {
 	int i;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		if (s[i] >= 'a' && s[i] <= 'z')
+		if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z'))
 		{
-			s[i] = ((s[i] - 'a' + 13) % 26) + 'a';
-		}
-		else if (s[i] >= 'A' && s[i] <= 'Z')
-		{
-			s[i] = ((s[i] - 'A' + 13) % 26) + 'A';
+			str[i] = ((str[i] - 'A' + 13) % 26) + 'A';
 		}
 	}
 
-	return (s);
+	return (str);
 }
