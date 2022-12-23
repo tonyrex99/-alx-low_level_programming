@@ -1,4 +1,4 @@
-#include "main.h"
+#include main.h
 
 /**
  * print_number - Print an integer
@@ -6,24 +6,19 @@
  */
 void print_number(int n)
 {
-	int divisor = 1000000000;
-	int is_negative = 0;
+	unsigned int num;
+
+	num = n;
 
 	if (n < 0)
 	{
 		_putchar('-');
-		is_negative = 1;
-		n = -n;
+		num = -n;
 	}
 
-	while (divisor > 0)
+	if (num / 10)
 	{
-		int digit = (n / divisor) % 10;
-
-		if (digit > 0 || divisor == 1 || (divisor / 10) % 10 > 0)
-		{
-			_putchar(digit + '0');
-		}
-		divisor /= 10;
+		print_number(num / 10);
 	}
+	_putchar((num % 10) + '0');
 }
