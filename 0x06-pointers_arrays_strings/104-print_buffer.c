@@ -1,60 +1,43 @@
+#include "main.h"
+#include <stdio.h>
+
 /**
- * print_buffer - print the content of a buffer
- * @b: a pointer to the buffer to be printed
- * @size: the size of the buffer in bytes
- */
+ * print_buffer - prints buffer
+ * @b: buffer.
+ * @size: size of buffer.
+ * Return: no return.
+ **/
 void print_buffer(char *b, int size)
 {
-	int i;
+	int j, k, l;
 
 	if (size <= 0)
+		printf("\n");
+	else
 	{
-		putchar('\n');
-		return;
-	}
-
-	for (i = 0; i < size; i++)
-	{
-		if (i % 10 == 0)
+		for (j = 0; j < size; j += 10)
 		{
-			print_hex(i, 8);
-			putchar(':');
-			putchar(' ');
-		}
-		print_hex(*(b + i), 2);
-		putchar(' ');
-		if ((i + 1) % 10 == 0 || i == size - 1)
-		{
-			int j;
-
-			for (j = i - (i % 10); j <= i; j++)
+			printf("%.8x:", j);
+			for (k = j; k < j + 10; k++)
 			{
-				if (*(b + j) >= 32 && *(b + j) <= 126)
-				{
-					putchar(*(b + j));
-				}
-			else
+				if (k % 2 == 0)
+					printf(" ");
+				if (k < size)
+					printf("%.2x", *(b + k));
+				else
+					printf("  ");
+			}
+			printf(" ");
+			for (l = j; l < j + 10; l++)
 			{
-				putchar('.');
+				if (l >= size)
+					break;
+				if (*(b + l) < 32 || *(b + l) > 126)
+					printf("%c", '.');
+				else
+					printf("%c", *(b + l));
 			}
-			}
-			putchar('\n');
+			printf("\n");
 		}
-	}
-}
-
-/**
- * print_hex - print an integer as a hexadecimal number
- * @n: the integer to be printed
- * @digits: the minimum number of digits to print
- */
-void print_hex(int n, int digits)
-{
-	int i;
-	char hex_chars[] = "0123456789abcdef";
-
-	for (i = digits - 1; i >= 0; i--)
-	{
-		putchar(hex_chars[(n >> (4 * i)) & 0xf]);
 	}
 }
