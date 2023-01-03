@@ -5,7 +5,8 @@
  * @s: The string to reverse
  */
 
-void rev_string(char *s)
+void
+rev_string(char *s)
 {
 	int i, j, k, temp;
 
@@ -16,8 +17,9 @@ void rev_string(char *s)
 	}
 	k = 0;
 	j = i - 1;
+	be
 
-	while (k < j)
+		while (k < j)
 	{
 		temp = s[k];
 		s[k] = s[j];
