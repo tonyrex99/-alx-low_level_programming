@@ -6,28 +6,41 @@
  * @argv: args
  * Return: RETURNS ZERO
  */
-int main(int argc, char *argv[])
-{
-unsigned long mul;
-int i, j;
+int main(int argc, char *argv[]) {
 	if (argc != 3)
 	{
-		printf("Error\n");
-		exit(98);
+		errors();
+		return 98;
 	}
-	for (i = 1; i < argc; i++)
-	{
-		for (j = 0; argv[i][j] != '\0'; j++)
-		{
-			if (argv[i][j] > 57 || argv[i][j] < 48)
-			{
-				printf("Error\n");
-				exit(98);
-			}
-		}
 
+	if (!is_digit(argv[1]) || !is_digit(argv[2]))
+	{
+		errors();
+		return 98;
 	}
-	mul = atol(argv[1]) *  atol(argv[2]);
-	printf("%lu\n", mul);
-return (0);
+
+	int num1 = atoi(argv[1]);
+	int num2 = atoi(argv[2]);
+	int result = num1 * num2;
+	printf("%d\n", result);
+	return 0;
+}
+
+int is_digit(char *s)
+{
+
+	int len = _strlen(s);
+	for (int i = 0; i < len; i++)
+	{
+		if (!isdigit(s[i]))
+		{
+			return 0;
+		}
+	}
+	return 1;
+}
+
+void errors(void)
+{
+	printf("Error\n");
 }
