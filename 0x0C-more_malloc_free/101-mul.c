@@ -2,6 +2,8 @@
 
 /**
  * main - multiplies two positive numbers
+ * is_digit - check if input is digit
+ * errors - prints error
  * @argc: n arguments
  * @argv: args
  * Return: RETURNS ZERO
@@ -40,7 +42,7 @@ int is_digit(char *s)
 			return (0);
 		}
 	}
-return (1)	;
+	return (1);
 }
 
 void errors(void)
