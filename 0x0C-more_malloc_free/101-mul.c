@@ -2,57 +2,32 @@
 
 /**
  * main - multiplies two positive numbers
- * is_digit - check if input is digit
- * errors - prints error
  * @argc: n arguments
  * @argv: args
  * Return: RETURNS ZERO
  */
 int main(int argc, char *argv[])
 {
+unsigned long mul;
+int i, j;
 	if (argc != 3)
 	{
-		errors();
-		return (98);
+		printf("Error\n");
+		exit(98);
 	}
-
-	if (!is_digit(argv[1]) || !is_digit(argv[2]))
+	for (i = 1; i < argc; i++)
 	{
-		errors();
-		return (98);
-	}
-
-	int num1 = atoi(argv[1]);
-	int num2 = atoi(argv[2]);
-	int result = num1 * num2;
-
-	printf("%d\n", result);
-	return (0);
-}
-
-/**
- * is_digit - check if input is digit
- * @s: args
- * Return: RETURNS 1
- */
-int is_digit(char *s)
-{
-
-	int len = _strlen(s);
-
-	for (int i = 0; i < len; i++)
-	{
-		if (!isdigit(s[i]))
+		for (j = 0; argv[i][j] != '\0'; j++)
 		{
-			return (0);
+			if (argv[i][j] > 57 || argv[i][j] < 48)
+			{
+				printf("Error\n");
+				exit(98);
+			}
 		}
+
 	}
-	return (1);
-}
-/**
- * errors - prints error
- */
-void errors(void)
-{
-	printf("Error\n");
+	mul = atol(argv[1]) *  atol(argv[2]);
+	printf("%lu\n", mul);
+return (0);
 }
