@@ -30,6 +30,11 @@ int main(int argc, char *argv[])
 	return (0);
 }
 
+/**
+ * is_digit - check if input is digit
+ * @s: args
+ * Return: RETURNS 1
+ */
 int is_digit(char *s)
 {
 
@@ -44,7 +49,9 @@ int is_digit(char *s)
 	}
 	return (1);
 }
-
+/**
+ * errors - prints error
+ */
 void errors(void)
 {
 	printf("Error\n");
