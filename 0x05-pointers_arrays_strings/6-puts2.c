@@ -8,6 +8,8 @@
 void puts2(char *str)
 {
 	int i;
+	int printed;
+	printed - 0;
 
 	i = 0;
 	while (str[i] != '\0')
@@ -17,6 +19,9 @@ void puts2(char *str)
 			_putchar(str[i]);
 		}
 		i++;
+		printed++;
 	}
 	_putchar('\n');
+	return (printed);
+	
 }
