@@ -1,19 +1,23 @@
 #include <stdio.h>
-#define UNUSED(x) (void)(x)
+#include <stdlib.h>
+
 /**
- * main - prints out program name
- * @argc: number of args to be passed
- * @argv: strings passed
- * Return: alway 0
+ *main - prints all the arguments a program receives.
  *
+ *@argc: number of arguments
+ *
+ *@argv: array of arguments.
+ *
+ *Return: Always (0) success.
  */
+
 int main(int argc, char *argv[])
 {
-	int i;
+	int n;
 
-	for (i = 0; i < argc; i++)
+	for (n = 0; n < argc; n++)
 	{
-		printf("%s\n", argv[i]);
+		printf("%s\n", argv[n]);
 	}
 	return (0);
 }
