@@ -1,26 +1,30 @@
 #include <stdio.h>
+#include <strings.h>
 #include <stdlib.h>
+#define UNUSED(x) (void)(x)
 /**
- * main - Program that multiplies two numbers.
- * @argc: This is the argument count
- * @argv: This is the argument vector
+ * main - prints out program name
+ * @argc: number of args to be passed
+ * @argv: strings passed
+ * Return: alway 0
  *
- * Return: 0;
  */
 int main(int argc, char *argv[])
 {
-	int index, multiplication;
+	if (argc == 3)
+	{
+		int x, y, r;
 
-	multiplication = 1;
-	if (argc < 3)
+		x = atoi(argv[1]);
+		y = atoi(argv[2]);
+		r = x * y;
+		printf("%i\n", r);
+		return (0);
+
+	}
+	else
 	{
 		printf("Error\n");
 		return (1);
 	}
-	for (index = 1; index < argc; index++)
-	{
-		multiplication = multiplication * atoi(argv[index]);
-	}
-	printf("%d\n", multiplication);
-	return (0);
 }

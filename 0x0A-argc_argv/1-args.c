@@ -1,16 +1,18 @@
 #include <stdio.h>
+#define UNUSED(x) (void)(x)
 /**
- * main - Write a program that prints the number of arguments passed into it
- *
- * @args: This is the argument count
- * @argv: This is the argument vector
- *
- * Return: This return to 0
+ * main - prints out program name
+ * @argc: number of args to be passed
+ * @argv: strings passed
+ * Return: alway 0
  *
  */
-int main(int args, char *argv[])
+int main(int argc, char *argv[])
 {
-	printf("%d\n", args - 1);
-	(void)argv;
+	int a;
+
+	a = argc - 1;
+	UNUSED(argv);
+	printf("%i\n", a);
 	return (0);
 }

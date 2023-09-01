@@ -1,12 +1,13 @@
 #include <stdlib.h>
-#include <stdio.h>
+#include "main.h"
+
 /**
- * wordnos - counts no of words in a given string
- * @s: pointer to the string
+ * count_word - helper function to count the number of words in a string
+ * @s: string to evaluate
  *
- * Return: No. of words in the string (int)
+ * Return: number of words
  */
-int wordnos(char *s)
+int count_word(char *s)
 {
 	int flag, c, w;
 
@@ -29,7 +30,6 @@ int wordnos(char *s)
 /**
  * **strtow - splits a string into words
  * @str: string to split
- *
  * Return: pointer to an array of strings (Success)
  * or NULL (Error)
  */
@@ -40,7 +40,7 @@ char **strtow(char *str)
 
 	while (*(str + len))
 		len++;
-	words = wordnos(str);
+	words = count_word(str);
 	if (words == 0)
 		return (NULL);
 
